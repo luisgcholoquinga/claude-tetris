@@ -93,6 +93,9 @@ jobs:
                     implementation)
                   - A closing note that this is diagnosis-only and a fix will
                     be implemented separately
+                  - All of the above written in GitHub-flavored Markdown
+                    (headings, lists, and `inline code` for file/function
+                    names) so it renders cleanly on the GitHub issue page
 
             CONSTRAINTS (do not violate):
             - Do not edit, create, or delete any file in this repository.
