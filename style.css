@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: #0f0f17;
   color: #e0e0e0;
@@ -11,28 +15,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   user-select: none;
 }
 
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100vh;
 }
 
 .game-title {
   text-align: center;
-  font-size: 28px;
+  font-size: clamp(18px, 4vh, 28px);
   font-weight: 800;
   letter-spacing: 8px;
   color: #7aa2f7;
   margin-bottom: 16px;
   text-shadow: 0 0 20px rgba(122, 162, 247, 0.5);
+  flex-shrink: 0;
 }
 
 .game-container {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  min-height: 0;
 }
 
 #board {
@@ -41,6 +52,8 @@ body {
   background: #1a1a25;
   border-radius: 4px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  height: min(600px, calc(100vh - 90px));
+  width: auto;
 }
 
 /* ---- Panel lateral ---- */
@@ -50,6 +63,8 @@ body {
   flex-direction: column;
   gap: 20px;
   padding-top: 4px;
+  max-height: min(600px, calc(100vh - 90px));
+  overflow: hidden;
 }
 
 .panel-section {
